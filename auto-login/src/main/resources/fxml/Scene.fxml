@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jean.autoLogin.controller.MainController">
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="70.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="用户名：" GridPane.rowIndex="1" />
+      <Label text="密码：" GridPane.rowIndex="2" />
+      <ComboBox fx:id="username" editable="true" maxWidth="1.7976931348623157E308" prefHeight="30.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+      <PasswordField fx:id="password" prefHeight="30.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <CheckBox fx:id="rememberMe" mnemonicParsing="false" text="住密码" />
+            <CheckBox fx:id="autoLogin" mnemonicParsing="false" text="自动登录" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <Button fx:id="login" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="登陆" />
+            <Button fx:id="cancel" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="取消" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="6">
+         <children>
+            <Label fx:id="message" text="--" wrapText="true" />
+         </children>
+      </HBox>
+      <Label text="* 连续5次输错密码账户会被冻结300秒" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   </children>
+</GridPane>
